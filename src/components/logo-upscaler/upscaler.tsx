@@ -77,11 +77,11 @@ export default function LogoUpscaler() {
             className="h-28 w-auto"
           />
         </div>
+
         <p className="text-muted-foreground">
           Instantly upscale your logo with a single click
         </p>
       </div>
-
       {!selectedFile ? (
         <UploadZone onFileSelected={handleFileSelected} />
       ) : (

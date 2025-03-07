@@ -1,4 +1,5 @@
 import LogoUpscaler from "./logo-upscaler/upscaler";
+import Footer from "./footer";
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -77,8 +78,11 @@ function Home() {
       </div>
 
       {/* Content with glass effect */}
-      <div className="relative z-10 pt-10 pb-20 px-4">
-        <LogoUpscaler />
+      <div className="relative z-10 pt-10 pb-10 px-4 flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <LogoUpscaler />
+        </div>
+        <Footer />
       </div>
     </div>
   );
