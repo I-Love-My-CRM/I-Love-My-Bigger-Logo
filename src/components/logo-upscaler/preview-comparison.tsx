@@ -32,7 +32,7 @@ export default function PreviewComparison({
     <div className="flex flex-col space-y-6 w-full">
       <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
         <div className="flex flex-col items-center">
-          <div className="border rounded-md p-2 bg-white shadow-sm mb-2">
+          <div className="border border-white/50 rounded-md p-2 bg-white/80 backdrop-blur-sm shadow-md mb-2">
             <img
               src={originalImage}
               alt="Original logo"
@@ -46,7 +46,7 @@ export default function PreviewComparison({
 
         <div className="flex flex-col items-center">
           <div
-            className="border rounded-md p-2 bg-white shadow-sm mb-2 overflow-hidden"
+            className="border border-white/50 rounded-md p-2 bg-white/80 backdrop-blur-sm shadow-md mb-2 overflow-hidden"
             style={{ width: "100%", maxWidth: "300px", height: "200px" }}
           >
             <div

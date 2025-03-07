@@ -68,7 +68,7 @@ export default function LogoUpscaler() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 space-y-8 bg-background">
+    <div className="w-full max-w-4xl mx-auto p-8 space-y-8 backdrop-blur-lg bg-white/70 rounded-2xl shadow-xl border border-white/50">
       <div className="text-center mb-8">
         <div className="flex justify-center mb-6">
           <img
@@ -125,7 +125,7 @@ export default function LogoUpscaler() {
             </div>
           )}
 
-          <div className="border-t pt-6">
+          <div className="border-t border-white/30 pt-6">
             <Button
               variant="outline"
               onClick={() => {

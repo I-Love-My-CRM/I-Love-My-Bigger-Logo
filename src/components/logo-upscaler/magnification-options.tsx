@@ -12,7 +12,7 @@ export default function MagnificationOptions({
   const scaleOptions = [2, 5, 10, 15];
 
   return (
-    <div className="flex flex-col space-y-4 w-full">
+    <div className="flex flex-col space-y-4 w-full backdrop-blur-sm bg-white/40 p-4 rounded-lg border border-white/50 shadow-md">
       <h3 className="text-lg font-medium">Select Magnification</h3>
       <div className="flex flex-wrap gap-3">
         {scaleOptions.map((scale) => (

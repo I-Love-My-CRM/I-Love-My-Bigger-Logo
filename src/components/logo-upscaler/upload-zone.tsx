@@ -58,7 +58,7 @@ export default function UploadZone({
 
   return (
     <div
-      className={`w-full h-64 border-2 border-dashed rounded-lg flex flex-col items-center justify-center p-6 transition-colors ${isDragging ? "border-primary bg-primary/5" : "border-border"}`}
+      className={`w-full h-64 border-2 border-dashed rounded-lg flex flex-col items-center justify-center p-6 transition-colors backdrop-blur-sm ${isDragging ? "border-primary bg-primary/10" : "border-white/50 bg-white/30"}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
