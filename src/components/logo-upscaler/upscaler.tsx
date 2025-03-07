@@ -103,7 +103,7 @@ export default function LogoUpscaler() {
               <Button
                 onClick={handleDownload}
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+                className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white px-8 border-0"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Save to Your Device
