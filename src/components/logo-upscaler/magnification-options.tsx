@@ -1,4 +1,4 @@
-import { Slider } from "@/components/ui/slider";
+import { CustomSlider } from "@/components/ui/custom-slider";
 import { useState, useEffect, useRef } from "react";
 
 interface MagnificationOptionsProps {
@@ -44,6 +44,12 @@ export default function MagnificationOptions({
     };
   }, []);
 
+  // Generate tick marks for each increment
+  const tickMarks = [];
+  for (let i = minScale; i <= maxScale; i++) {
+    tickMarks.push(i);
+  }
+
   return (
     <div className="flex flex-col space-y-4 w-full backdrop-blur-sm bg-white/40 p-4 rounded-lg border border-white/50 shadow-md">
       <div className="flex justify-between items-center">
@@ -54,7 +60,7 @@ export default function MagnificationOptions({
       </div>
 
       <div className="px-1 py-4">
-        <Slider
+        <CustomSlider
           defaultValue={[selectedScale]}
           value={[sliderValue]}
           min={minScale}
@@ -62,6 +68,20 @@ export default function MagnificationOptions({
           step={1}
           onValueChange={handleSliderChange}
         />
+
+        {/* Tick marks */}
+        <div className="relative mt-1 h-6">
+          {tickMarks.map((tick) => (
+            <div
+              key={tick}
+              className="absolute top-0 w-0.5 h-2 bg-muted-foreground/50"
+              style={{
+                left: `${((tick - minScale) / (maxScale - minScale)) * 100}%`,
+                transform: "translateX(-50%)",
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="flex justify-between text-sm text-muted-foreground">
