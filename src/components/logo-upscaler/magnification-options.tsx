@@ -9,7 +9,7 @@ export default function MagnificationOptions({
   selectedScale = 2,
   onScaleSelect = () => {},
 }: MagnificationOptionsProps) {
-  const scaleOptions = [2, 5, 10, 15];
+  const scaleOptions = [2, 5, 10];
 
   return (
     <div className="flex flex-col space-y-4 w-full backdrop-blur-sm bg-white/40 p-4 rounded-lg border border-white/50 shadow-md">

@@ -15,6 +15,7 @@ import {
 export default function LogoUpscaler() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string>("");
+  const [upscaledImage, setUpscaledImage] = useState<string>("");
   const [selectedScale, setSelectedScale] = useState<number>(2);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [isComplete, setIsComplete] = useState<boolean>(false);
@@ -40,10 +41,11 @@ export default function LogoUpscaler() {
     setIsProcessing(true);
 
     try {
-      // Process the image (in a real implementation, this would use a proper upscaling algorithm)
-      await processImage(imageSrc, scale);
+      // Process the image with our upscaling function
+      const result = await processImage(imageSrc, scale);
+      setUpscaledImage(result);
 
-      // Simulate processing time
+      // Small delay to show processing state
       setTimeout(() => {
         setIsProcessing(false);
         setIsComplete(true);
@@ -55,7 +57,7 @@ export default function LogoUpscaler() {
   };
 
   const handleDownload = () => {
-    if (!imagePreview || !selectedFile) return;
+    if (!upscaledImage || !selectedFile) return;
 
     // Get file extension
     const fileExtension = selectedFile.name.split(".").pop() || "png";
@@ -63,8 +65,8 @@ export default function LogoUpscaler() {
     // Set the file name with scale indicator
     const fileName = `${selectedFile.name.replace(`.${fileExtension}`, "")}_${selectedScale}x.${fileExtension}`;
 
-    // Use the download utility function
-    downloadImage(imagePreview, fileName);
+    // Use the download utility function with the upscaled image
+    downloadImage(upscaledImage, fileName);
   };
 
   return (
