@@ -70,9 +70,13 @@ export default function LogoUpscaler() {
   return (
     <div className="w-full max-w-4xl mx-auto p-6 space-y-8 bg-background">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">
-          I Love My Bigger Logos
-        </h1>
+        <div className="flex justify-center mb-6">
+          <img
+            src="/I Love My Logo Logo.png"
+            alt="I Love My Logo"
+            className="h-28 w-auto"
+          />
+        </div>
         <p className="text-muted-foreground">
           Instantly upscale your logo with a single click
         </p>
